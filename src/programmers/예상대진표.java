@@ -28,4 +28,3 @@ public class 예상대진표 {
         return (int) (Math.log(A) / Math.log(2));
     }
 }
-
