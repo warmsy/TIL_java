@@ -1,4 +1,4 @@
-package backjoon;
+package backjoon.dp;
 
 import java.io.*;
 import java.util.*;
