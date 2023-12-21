@@ -2,7 +2,7 @@ package backjoon;
 
 import java.util.*;
 
-public class DFS_BFS {
+public class DFS_BFS1 {
 
     public static ArrayList<Integer> [] graph ;
     public static boolean [] visited ;
