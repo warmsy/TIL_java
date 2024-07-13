@@ -2,7 +2,7 @@ package swea.구현;
 
 import java.util.Scanner;
 
-public class 두개의숫자열_D2 {
+public class D2_두개의숫자열_1959 {
     /**
      * 잘한점
      * 반복되는 코드를 메서드로 뺸거
