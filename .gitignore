@@ -2,6 +2,12 @@
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
+/src/SSAFY/Movie
+/src/SSAFY/MovieTest
+/src/SSAFY/MovieManager
+/src/SSAFY/SeriesMovie
+
+
 
 ### Eclipse ###
 .apt_generated
