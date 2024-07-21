@@ -25,15 +25,16 @@ public class snail {
         // 배열의 모든 요소 순회
         while (cnt < r * c) {
             // 오른쪽으로 이동
-            for (int j = nc; j < c - round + 1 ; j++) {
+            for (int j = nc; j <= c - round  ; j++) {
                 chars[nr][j] = init++; // 문자 채우고 증가
                 cnt++; // 채운 개수 증가
                 nc = j; // 열 위치 업데이트
             }
             nr++; // 행 위치 증가 (아래로 이동하기 위함)
+            System.out.println("여기까지 행 " + Arrays.deepToString(chars));
 
             // 아래로 이동
-            for (int i = nr; i < r - round + 1 ; i++) {
+            for (int i = nr; i <= r - round  ; i++) {
                 chars[i][nc] = init++; // 문자 채우고 증가
                 cnt++; // 채운 개수 증가
                 nr = i; // 행 위치 업데이트
