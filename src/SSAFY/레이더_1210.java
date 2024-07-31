@@ -1,3 +1,5 @@
+package SSAFY;
+
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
@@ -27,7 +29,7 @@ public class 레이더_1210 {
             int arriveX = 0, arriveY = 0;
             for (int i = 0; i < map.length; i++) {
                 // 여기서 map의 r만큼 문자를 받아오는구나
-                st = new StringTokenizer(br.readLine()); // 한 줄씩 받아오는데
+                st = new StringTokenizer(br.readLine(), " "); // 한 줄씩 받아오는데
                 for (int j = 0; j < map[0].length; j++) { // 이 줄의 길이에서
                     map[i][j] = Integer.parseInt(st.nextToken()); // st의 토큰의 개수를 하나씩 받아옴
                     if (map[i][j] == 2) { // 분명 여기서 2가 들어옴
