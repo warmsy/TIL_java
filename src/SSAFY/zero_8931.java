@@ -4,56 +4,45 @@ import java.io.*;
 import java.util.Stack;
 import java.util.StringTokenizer;
 
-public class zero_8931 {
-    // stack도 초기화
-    private static Stack<Integer> stack;
-    // cnt도 static으로 초기화 해줘야되나?
+public class zero_8931 {// stack도 초기화
+
+// cnt도 static으로 초기화 해줘야되나?
 
     public static void main(String[] args) throws IOException {
-        System.setIn(new FileInputStream("scr/CodingTest/res/sample_input.txt"));
+        System.setIn(new FileInputStream("src/CodingTest/res/sample_input.txt"));
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st;
         StringBuilder sb = new StringBuilder();
 
         // 1. TestCase 받아오기
         int T = Integer.parseInt(br.readLine());
-
-        stack = new Stack<>();
+        Stack<Integer> stack = new Stack<>();
         // 처음에 T개 받아오는데
         for (int tc = 1; tc <= T; tc++) {
-            // 개수를 받아오겠구나
-            st = new StringTokenizer(br.readLine(), " ");
-            int n = Integer.parseInt(st.nextToken());
+            int n = Integer.parseInt(br.readLine());
             // 2. stack 초기화
             for (int i = 0; i < n; i++) {
                 st = new StringTokenizer(br.readLine(), " ");
+                // a 받아오는데
                 int a = Integer.parseInt(st.nextToken());
-                stack.push(a);
-            }
-            int cnt = 0;
-            // 3. stack iterator 돌면서
-            while (!stack.isEmpty()) {
-                if (stack.pop() == 0) {
-                    cnt++;
-                    zeroSum(cnt);
-                } else {
-
+                // stack 비어있지않고 0이 아니면 넣어주고
+                if (a == 0) {
+                    if (!stack.isEmpty()) {
+                        stack.pop();
+                    }
+                } else { // a가 0 아닐 때
+                    stack.push(a);
                 }
             }
+            int answer = 0;
+            while (!stack.isEmpty()) {
+                answer += stack.pop();
+            }
 
 
+            sb.append("#").append(tc).append(" ").append(answer).append("\n");
         }
-
-
-    }
-
-    private static void zeroSum(int cnt) {
-        if (cnt != 0) {
-            zeroSum(cnt++);
-        } else {
-            stack.pop();
-            cnt--;
-        }
-
+        System.out.println(sb.toString());
+        br.close();
     }
 }
